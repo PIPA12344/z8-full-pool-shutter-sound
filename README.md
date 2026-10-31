@@ -73,15 +73,7 @@ ffmpeg -i input.wav -ar 48000 -ac 2 -c:a pcm_s16le clip.wav
 python full_pool.py --stock-eg /private/original-eg.bi --wav /private/clip.wav --out local/test-1360
 ~~~
 
-本项目与 [NikonFirmwarePatch 四项功能修改工程](https://github.com/XinmiaoZhao/NikonFirmwarePatch)兼容，可在保留 **ProRes、RAW 预拍、像素位移合成、开放门／N-RAW** 四项功能的基础上修改快门声。
-
-**需要使用干净的 C3.11 功能基底：从官方 C3.11 构建所需功能，声音子系统保持原厂状态，尚未加入任何自定义快门声补丁。** 将这个基底的 EG 模块通过 `--base-eg` 传入：
-
-~~~sh
-python full_pool.py --stock-eg /private/original-eg.bi --base-eg /private/clean-feature-eg.bi --wav /private/clip.wav --out local/feature-test-1360
-~~~
-
-如果现有模块已经改过快门声，请从原厂输入重新生成干净功能基底后再使用本工具。这里要求的是声音子系统未被修改，与固件显示的版本号无关。
+本项目与 [NikonFirmwarePatch 四项功能修改工程](https://github.com/XinmiaoZhao/NikonFirmwarePatch)兼容，可搭配使用。**请使用未修改过快门声的干净 C3.11 基底。**
 
 ### 3. 输出
 
